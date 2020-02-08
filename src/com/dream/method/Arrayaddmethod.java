@@ -7,15 +7,15 @@ import java.util.Date;
  */
 public class Arrayaddmethod {
     public static void main(String[] args) {
-        int[] a = new int[100000000];
+        int[] a = new int[11];
         //第一种
         Date d3 = new Date();
         for (int i=0;i<a.length;i++){
             a[i]=i;
         }
-        /*for (int i=0;i<a.length;i++){
+        for (int i=0;i<a.length;i++){
             System.out.println(a[i]);
-        }*/
+        }
         Date d4 = new Date();
         System.out.println(d4.getTime()-d3.getTime());
         //第二种
@@ -27,17 +27,19 @@ public class Arrayaddmethod {
             }
         }else if(a.length%2!=0){
             for (int i=0;i<a.length/2+1;i++){
-                if (i<a.length/2){
+                if (a.length==1){
+                    a[i]=i;
+                }else if (i<a.length/2){
                     a[i*2]=i*2;
                     a[i*2+1]=i*2+1;
-                }else if(i==a.length/2){
+                }else{
                     a[i]=i*2-1;
                 }
             }
         }
-        /*for (int i=0;i<a.length;i++){
+        for (int i=0;i<a.length;i++){
             System.out.println(a[i]);
-        }*/
+        }
         Date d2 = new Date();
         System.out.println(d2.getTime()-d1.getTime());
     }
